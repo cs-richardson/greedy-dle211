@@ -19,28 +19,30 @@ change = round(change * 100)
 # Calculates the number of quarters owed.
 quarters = change // 25
 change = change % 25
-# If at least 1 quarter is owed, print the number of quarters owed.
-if quarters >= 1:
-    print("You owe", quarters, "quarter(s).")
 
 # Calculates the number of dimes owed.
 dimes = change // 10
 change = change % 10
-# If at least 1 dime is owed, print the number of dimes owed.
-if dimes >= 1:
-    print("You owe", dimes, "dime(s).")
 
 # Calculates the number of nickels owed.
 nickels = change // 5
 change = change % 5
-# If at least 1 nickel is owed, print the number of nickels owed.
-if nickels == 1:
-    print("You owe", nickels, "nickel(s).")
 
 # Turns the rest of the change into pennies.
 pennies = change
-# If at least 1 pennie is owed, print the number of pennies owed.
+
+# Calculates all the coins required
+coins = quarters + dimes + nickels + pennies
+
+# Prints the total amount of coins, and specify the type of coins
+print("You owe", coins, "coins, which are:")
+if quarters >= 1:
+    print(quarters, "quarter(s)")
+if dimes >= 1:
+    print(dimes, "dime(s)")
+if nickels >= 1:
+    print(nickels, "nickel(s)")
 if pennies == 1:
-    print("You owe 1 penny.")
+    print("1 penny")
 elif pennies > 1:
-    print("You owe", pennies, "pennies.")
+    print(pennies, "pennies")
